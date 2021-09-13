@@ -11,9 +11,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        testAttributeText()
+    }
+}
+
+extension ViewController {
+    func testAttributeText() {
+        let str = "测试: 首行缩进"
+        let attrStr: AttributedText = "\(str, .firstLineHeadIndent(20)) \("红色文字", .color(.red)) \("黄色\(12)号文字", .color(.yellow), .font(UIFont.systemFont(ofSize: 12))), \(100), \(120, .color(.blue)) , test: \("test", attributes: [.foregroundColor :UIColor.purple]), \(1.06, .color(.yellow)), \(UIColor.black, .color(.black))"
+        
+        let label = UILabel()
+        label.attributedText = attrStr.attributedText
+        label.frame = CGRect(x: 10, y: 80, width: 100, height: 300)
+        label.numberOfLines = 0
+        view.addSubview(label)
+        view.backgroundColor = .green
     }
 
-
 }
+
+
 

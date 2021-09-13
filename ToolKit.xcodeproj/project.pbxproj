@@ -13,6 +13,7 @@
 		67608FEC26EB983A005EB9E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67608FEA26EB983A005EB9E6 /* Main.storyboard */; };
 		67608FEE26EB9840005EB9E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67608FED26EB9840005EB9E6 /* Assets.xcassets */; };
 		67608FF126EB9840005EB9E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67608FEF26EB9840005EB9E6 /* LaunchScreen.storyboard */; };
+		67608FFA26EB98DE005EB9E6 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67608FF926EB98DE005EB9E6 /* AttributedText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		67608FED26EB9840005EB9E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67608FF026EB9840005EB9E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67608FF226EB9840005EB9E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67608FF926EB98DE005EB9E6 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		67608FE326EB983A005EB9E6 /* ToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				67608FF826EB9848005EB9E6 /* Tools */,
 				67608FE426EB983A005EB9E6 /* AppDelegate.swift */,
 				67608FE626EB983A005EB9E6 /* SceneDelegate.swift */,
 				67608FE826EB983A005EB9E6 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				67608FF226EB9840005EB9E6 /* Info.plist */,
 			);
 			path = ToolKit;
+			sourceTree = "<group>";
+		};
+		67608FF826EB9848005EB9E6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				67608FF926EB98DE005EB9E6 /* AttributedText.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				67608FE926EB983A005EB9E6 /* ViewController.swift in Sources */,
 				67608FE526EB983A005EB9E6 /* AppDelegate.swift in Sources */,
 				67608FE726EB983A005EB9E6 /* SceneDelegate.swift in Sources */,
+				67608FFA26EB98DE005EB9E6 /* AttributedText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28K64WM5WW;
 				INFOPLIST_FILE = ToolKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28K64WM5WW;
 				INFOPLIST_FILE = ToolKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

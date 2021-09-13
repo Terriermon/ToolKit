@@ -38,8 +38,8 @@ extension AttributedText: ExpressibleByStringInterpolation {
             let attr = NSAttributedString(string: literal)
             self.attributedText.append(attr)
         }
-        
-        func appendInterpolation(wrap string: Self, _ styles: Style...) {
+        /// "\(wrap:"测试\("嵌套", .color(.blue))", .color(.white), .oblique)" 外层的值会覆盖掉(或追加)内层的值
+        func appendInterpolation(wrap string: AttributedText, _ styles: Style...) {
             var attrs: [NSAttributedString.Key: Any] = [:]
             styles.forEach { attrs.merge($0.attributes, uniquingKeysWith: {$1}) }
             let mas = NSMutableAttributedString(attributedString: string.attributedText)
@@ -50,21 +50,21 @@ extension AttributedText: ExpressibleByStringInterpolation {
     }
 }
 
-//MARK: - 泛型T
+// MARK: - 泛型T
 extension AttributedText.StringInterpolation {
     /// \(UIColor.red)
     func appendInterpolation<T>(_ literal: T) {
         let attr = NSAttributedString(string: "\(literal)")
         self.attributedText.append(attr)
     }
-    
+
     /// \(UIColor.red , attributes: [.foregroundColor: UIColor.red])
     func appendInterpolation<T>(_ literal: T, attributes: [NSAttributedString.Key: Any]) {
         let attr = NSAttributedString(string: "\(literal)", attributes: attributes)
         self.attributedText.append(attr)
     }
-    
-    /// \(UIColor.red, color: .red)
+
+    /// \(UIColor,red, color: .red)
     func appendInterpolation<T>(_ literal: T, _ styles: AttributedText.Style...) {
         let attr = NSAttributedString(string: "\(literal)", attributes: styles.attributes())
         self.attributedText.append(attr)
